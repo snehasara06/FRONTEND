@@ -1,0 +1,111 @@
+<!-- <p>flight works!</p>
+
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <form #bookFlight="ngForm" (ngSubmit)="onSubmit(bookFlight)">
+                            <input type="hidden" name="fname" #firstname="ngModel" [(ngModel)]="flightService.newTicket.firstname">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="lname" #name="ngModel" [(ngModel)]="flightService.newTicket.lastname">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <form #bookFlight="ngForm" (ngSubmit)="onSubmit(bookFlight)">
+                            <input type="hidden" name="firstname" #firstname="ngModel"
+                                [(ngModel)]="flightService.newTicket.firstname">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="lastname" #name="ngModel"
+                                        [(ngModel)]="flightService.newTicket.lastname" placeholder="Enter full name"
+                                        required>
+                                    <label> Name :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="departure" #name="ngModel"
+                                        [(ngModel)]="flightService.newTicket.departure"
+                                        placeholder="Eg :Chennai ,Coimbatore">
+                                    <label>Departure :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="arrival" #name="ngModel"
+                                        [(ngModel)]="flightService.newTicket.arrival" placeholder="Delhi,Mumbai">
+                                    <label>Arrival:</label>
+                                </div>
+                            </div>
+
+                            <!-- <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="salary" #name="ngModel" [(ngModel)]="flightService.newTicket.salary" placeholder="Salary per annum">
+                    <label>Salary :</label>
+                  </div>
+                </div> -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button"
+                                        (click)="resetForm(bookFlight)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit"
+                                        [disabled]="!bookFlight.valid">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s7">
+                        <table class="responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>Departure</th>
+                                    <th>Arrival</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tr *ngFor="let fly of flightService.ticket">
+                                <td>{{fly.firstname}}</td>
+                                <td>{{fly.lastname}}</td>
+                                <td>{{fly.departure}}</td>
+                                <td>{{fly.arrival}}</td>
+                                <td>
+                                    <a class="action-btn" (click)="onEdit(fly)">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    {{fly._id}}
+                                    <a class="action-btn" (click)="onDelete(fly._id,bookFlight)">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
