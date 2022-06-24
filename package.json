@@ -1,6 +1,30 @@
 {
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
+    "@angular/core": "^14.0.3",
+    "@angular/forms": "^14.0.3",
+    "@angular/platform-browser": "^14.0.3",
     "cors": "^2.8.5",
-    "git": "^0.1.5"
-  }
+    "git": "^0.1.5",
+    "mime": "^1.2.9",
+    "object-assign": "^4.1.1",
+    "vary": "^1.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snehasara06/FRONTEND.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snehasara06/FRONTEND/issues"
+  },
+  "homepage": "https://github.com/snehasara06/FRONTEND#readme"
 }
